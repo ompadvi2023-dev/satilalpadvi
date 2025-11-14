@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0064)https://www.myutiitsl.com/PANform/forms/pan.html/redirectSuccess -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
+  
+<title>PANform</title>  
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+</head>  
+<body onload="disableBackButton();">
+
+
+
+
+
+
+
+
+<link href="./PANform_files/opensans-font.css" rel="stylesheet">
+<link href="./PANform_files/roboto-font.css" rel="stylesheet">
+<link href="./PANform_files/material-design-iconic-font.min.css" rel="stylesheet">
+<link href="./PANform_files/jquery-ui.min.css" rel="stylesheet">
+<link href="./PANform_files/style.css" rel="stylesheet">
+
+
+
+<title>UTIITSL || Form 49A</title>
+
+<style>
+input[type=text], select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+div {
+	border-radius: 5px;
+}
+
+.button1 {
+	background-color: red;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.button2 {
+	background-color: blue;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.button3 {
+	background-color: green;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.button4 {
+	background-color: #eb7e3b;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.button5 {
+	background-color: #5c8ded;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.text_f{
+     font-family: arial;
+     font-size: 14px;
+}
+.text_f1{
+     font-family: arial;
+     font-size: 14px;
+}
+</style>
+<script src="./PANform_files/validation.js.download"></script>
+<script src="./PANform_files/jquery.min.js.download"></script>
+<script src="./PANform_files/jquery.steps.js.download"></script>
+<script src="./PANform_files/jquery-ui.min.js.download"></script>
+<script src="./PANform_files/main.js.download"></script>
+
+
+
+<script type="text/javaScript">
+	function disableBackButton() {
+		window.history.forward();
+	}
+	setTimeout("disableBackButton()", 0);
+</script>
+<script type="text/JavaScript">
+history.pushState(null, null,"");
+window.addEventListener('popstate', function () {
+    history.pushState(null, null, "");
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	$("#errorDiv").dialog({
+		autoOpen : false,
+		modal : true,
+		autoSize : true,
+		draggable : false,
+		resizable : false,
+		position : {
+			my : "left top",
+			at : "left top",
+			of : window,
+			collision : "none"
+		},
+		create : function(event, ui) {
+			$(event.target).parent().css('position', 'fixed');
+		},
+
+		buttons : {
+			OK : function() {
+				$(this).dialog("close");
+			}
+		},
+		title : "Alert",
+		position : {
+			my : " center",
+			at : " center"
+		}
+	});
+});
+$(window).on('load', function(){	
+	try{
+	opener.location.reload(false);
+	}
+	catch(error){
+		//alert(error);
+	}
+	
+		var errorMesg="null";
+		//alert("errorMesg="+errorMesg);
+		var successMsg="null";
+		var feedFlg=$("#feeedFlg").val();
+	// alert('Appno :'+appNo+' feedFlg '+feedFlg);
+	
+			if(feedFlg=='N'){
+				//feedback(); //Commented on 05122019 as required by Anant sir.
+			}else{
+				// alert('Feedback already called!');
+			}
+			
+		if (errorMesg != null && errorMesg != "" && errorMesg != "null") {
+			var arr = errorMesg.split('.');
+			var msg1;
+			var val;
+			msg1 = "<table>";
+			arr.splice(-1, 1);
+			$.each(arr, function(k) {
+				msg1 += "<tr><td>&#187;" + arr[k] + "</td></tr>";
+			});
+			msg1 += "</table>";
+			$("#dialogText1").html(msg1);
+			$("#dialogText1").css("color", "red");
+			//alert($("#dialogText1").text());
+			$('#errorDiv').dialog({
+				"width" : "auto"
+			});
+			$("#errorDiv").dialog("open");
+			//return false;
+		}
+		if (successMsg != null && errorMesg != "" && successMsg != "null") {
+			var arr = successMsg.split('.');
+			var msg1;
+			var val;
+			msg1 = "<table>";
+			arr.splice(-1, 1);
+			$.each(arr, function(k) {
+				msg1 += "<tr><td>&#187;" + arr[k] + "</td></tr>";
+			});
+			msg1 += "</table>";
+			$("#dialogText1").html(msg1);
+			$("#dialogText1").css("color", "green");
+			//alert($("#dialogText1").text());
+			$('#errorDiv').dialog({
+				"width" : "auto"
+			});
+			$("#errorDiv").dialog("open");
+			//return false;
+		}
+	});
+
+	function editFrom() {
+		document.forms[0].action = "editPanData";
+		document.forms[0].method = "POST";
+		document.forms[0].submit();
+	}
+
+	function makePayment() {
+		//alert(applNo);
+		document.forms[0].action = "makePayment";
+		document.forms[0].method = "POST";
+		document.forms[0].submit();
+	}
+
+	function downloadPdf() {
+		document.forms[0].action = "download";
+		document.forms[0].method = "POST";
+		document.forms[0].submit();
+	}
+
+	function downloadDscFrom() {
+		document.forms[0].action = "downloadForm";
+		document.forms[0].method = "POST";
+		document.forms[0].submit();
+	}
+
+	function uploadDscFrom() {
+		document.forms[0].action = "dscUpload";
+		document.forms[0].method = "POST";
+		document.forms[0].enctype = "multipart/form-data";
+		document.forms[0].submit();
+	}
+
+	function downloadSignedForm() {
+		document.forms[0].action = "downloadSignedForm";
+		document.forms[0].method = "POST";
+		document.forms[0].submit();
+	}
+	function closeButton() {
+		//alert("tes");
+		//window.location.replace("https://www.utiitsl.com");
+		//var win = window.open('https://www.utiitsl.com', '_self');
+		//win.focus();
+		
+		//added on 08112019
+		window.close();
+
+	}
+	function feedback(){		
+		
+		var appNo=$("#applNo").val();
+		// var feedFlg=$("#feeedFlg").val();
+			// alert('Appno :'+appNo+' feedFlg '+feedFlg);
+			
+		$.ajax({
+				url : 'feedback',
+				data:{
+					'applNo':appNo
+				},
+				method : 'post',
+				success : function(response) {
+					//alert('success');
+					$("#ratingDialog").html(response);
+					$('#ratingDialog').dialog({
+						"width" : "auto",
+						resizable : false,
+						modal : true,
+						title : "Customer Feedback "
+					});
+					$("#ratingDialog").dialog("open");
+				}
+			});
+			$("#feeedFlg").val('Y');
+			
+		}
+	function printMinInRec(appl) {
+		//	$("#pButtonLink").hide();
+		var innerText = "";
+		var test = "Y";
+		var isDouble = "";
+		$("#pButtonLink").hide();
+		if (isDouble == "Y") {
+            innerText = "<html><head><title>Ack_"+appl+"</title><style>.text_f,.text_f1 {font-size: 8pt;font-family: serif,Arial,sans-serif} #headerFont{font-size: 10pt;font-family:monospace} #logo{width: 100px;height: 40px;} #applBar{width: 150px;height: 80px;} td { padding: 0; }</style></head><body>"
+                + document.getElementById("printMinInRec").innerHTML
+                + "<table align='right' cellpadding=0 cellspacing=0><tr><td align='right' ><font size='2'><b><i>PAN Collection Centre Copy</b></font></td></tr></table>"
+                + "<table cellpadding=0 cellspacing=0 width=100%><tr><td width=50% style='font-size: x-small;' align='left'><i>cut from here</i></td><td width=50% style='font-size: x-small;' align='right'><i>cut from here</i></td></tr></table>"
+                + "<table cellpadding=0 cellspacing=0 width=100%><tr><td width=5%><img src='/PANform/resources/images/a.png'/></td><td width=90%><hr style='border: dashed #000; border-width:1px 0 0; height:0;' width=100%></td><td width=5%><img src='/PANform/resources/images/b.png'/></td></tr></table>"
+                + document.getElementById("printMinInRec").innerHTML
+                + "<table align='right' cellpadding=0 cellspacing=0><tr><td align='right' ><font size='2'><b><i>Applicant's Copy</b></font></td></tr></table>"
+                + "</body></html>";
+		} else {
+			innerText = "<html><head><link rel='stylesheet' type='text/css' href="
+					+ "/PANform/resources/css/minInward.css"
+					+ "/><style>body {font-family: arial;  font-size: 10px;  background: none;     color: black;  }"
+					+ " #page {     width: 100%;      margin: 0; padding: 0;      background: none;    }"
+					+ " #menu-bar, #sidebar, h2#postcomment, form#commentform, #footer {     display: none;    }"
+					+ " .entry a:after {       content: "
+					+ " [' attr(href) ']"
+					+ ";   }"
+					+ "   #printed-article {        border: 1px solid #666;        padding: 10px;    }</style> </head><body>"
+					+ document.getElementById("printMinInRec").innerHTML
+					+ "</body></html>";
+		}
+
+		var printWindow = window
+				.open('', '',
+						'left=0,top=0,width=1000,height=1000,toolbar=0,scrollbars=0,status=0,header=0');
+		printWindow.document.write(innerText);
+		$("#tbl tr:odd").css("background-color", "#e5e5e5");
+		printWindow.document.close();
+		printWindow.focus();
+		printWindow.open();
+		printWindow.print();
+		printWindow.close();
+		$("#pButtonLink").show();
+	}
+
+	
+</script>
+<script type="text/javaScript">
+	function disableBackButton() {
+		window.history.forward();
+	}
+	setTimeout("disableBackButton()", 0);
+</script>
+
+
+
+
+
+
+	<div class="page-content" style="background-color: #010185;">
+		<div class="pan-49A-content">
+			<div class="pan-form">
+				<div class="pan-header">
+					<h3 class="heading">Form 49A</h3>
+					<p>
+						Under section 139A of the Income-Tax Act, 1961<br> 
+					</p>
+				</div>
+				 
+				<form class="form-register" action="https://www.myutiitsl.com/PANform/forms/pan.html/downloadSignedForm" method="POST">
+					
+						<div>
+							<!-- SECTION 5 -->
+							<h2></h2>
+							<section>
+							<div class="inner">
+
+								<table width="98%" align="center" style="border: 1px solid #0083c7;" bgcolor="#FFFFFF">
+									
+									<tbody><tr>
+										<td>
+												 
+															 
+
+                                
+
+											<div align="center" id="printMinInRec">
+											
+											<img align="left" style="padding-left: 4%" width="140px" height="50px" src="./PANform_files/logo.png"><br> 
+											
+											<b style="font-family:arial;font-size:14px;">PAN Application Acknowledgment Receipt For Form 49A<br>
+											 ( Digital Application
+											- Aadhaar based e-KYC 
+											[Otp] )
+											
+											
+											</b>
+											 <br> 
+											<table width="96%" align="center" style="border: 1px solid #0083c7;" bgcolor="#ffffff">
+												<tbody><tr id="">
+													<td style="padding-left: 2%">
+
+														<table width="100%" id="tbl">
+															
+															<tbody><tr>
+																<td class="text_f" width="40%">Received Rs. 106.90/-
+																	(incl of taxes) from</td>
+																<td class="text_f1" width="50%"><b>SHRI ASHOK
+																	 BHAMTYA PADVI</b></td>
+																<td rowspan="5" width="10%"><samp style="float: right; valign: top;">
+															
+																<img id="applBar" src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABkCAIAAAFHhcQTAAADl0lEQVR42u2d65LqIBCESSrv/8q71uacFJkbA4m6i1//sGLk1vQwQRywfP2glLK/7hcHjvvi07UMgWx/OttD+GVZDlN44PG2NpH90/3icWczU9TWJIrbr0+3OlBbrb5zvIq3yP1x2Q4jrI01sCrXJoU16zuDpizH2L82nNvZbJEeaydG/4sd7MiXqkZlVPbXKxt9rD2P2e4Rlh+Y94O3RmUi3XGzvnM8f4U30k5X+9ZTN4qZg+futHsPHL6e32D6VEZlVEZlVEZlzK58Znp6VM8y9EzLvDDzbsF3zXrNRXxbNNdY9IW70tPbnyZd89O2gQiWekopKNbTOj0xfIOBGHPTYNrqTVI9sfUdb2nAK9bMpZcGdGtfOqandVYQgxjEIAYxiEEMYhCDGMQgBrH5ib10HeLNisW/K4o0mRW0Yq0kxcm6VtxSy1R68cT4lXKJdBaLVXs7gvTNZHpxsLnSJ4nVHRBHxOSh42vMX3VFMo9h3Ef2GPPW2wRJ/atx3GIvtKaZN8iYKnBW53GKOtWhqHVP6KA+8WmxwvzqAr2SdS3mWDJLNlmsn+LoYQUrWMEKVrCCFaxgBStYwQpWsIIVrGAFK1jBClawghWsYAUrWMEKVhNhzuCEObXapHaJKJd8stI6fCafLJnRZmXYqIrdMje76Zve9styDk2KuyzenOltymtbYD7UrJnXixvTeZOjvbHTtKbePIupzx2pjaPFiQdrblT9Rd5Cx66ZLdbWaCZLhtStma69hVgwuHUyc5dyPkpw1eaXMUIxnOoB5iWOKZVEUGv+0erGPvYGPgbezDOqph83iyofG/j4kfPA+mAmc5u5udVdPzRrGxNmYz5zm491XWOxdsSXcB998DTXbTaPwhIHV3lMzcM0ReGx05nZBmcFaqEWQC2AWqgFUAugFmoB1AKohVoAtQBqoRZALYBaqAVQC6AWagHUAqiFWgC1AGqhFkAtgFqoBVALoBZqAdQCqIVaALXAvH88xdgC70Xq1Kr9In9+zMWUw8mKf8jL9dKSBeYrzfdb1hPq0zsy0ib/1PH2U9pSrn+0NC/Nlby9dNbMqGoazlgfeUd1jSUbf3TfWtqbPaE4c+sXTZASvivv0pulHX8HO9bIW6xhy1tc5k9uXwnTKeX/XHegtLzMTxq1W2wRV44HFH2hyScN4grne0276yn4jEq7LTFuX++canhOeGV6dmP780UNs+DbMd+OAWqBGt9MogMtTNkSSQAAAABJRU5ErkJggg==" onerror="this.style.display=&#39;none&#39;">
+														</samp></td>	 
+															</tr>
+															<tr style="background-color: rgb(229, 229, 229);">
+																<td class="text_f">Application No./Coupon No.</td>
+																<td class="text_f1"><b>U-A100626921</b></td>
+															</tr>
+
+															<tr>
+																<td class="text_f">Name to be printed on PAN card</td>
+																<td class="text_f1"><b>ASHOK BHAMTYA PADVI</b></td>
+															</tr>
+															
+															
+																<tr style="background-color: rgb(229, 229, 229);">
+																	<td class="text_f">Gender</td>
+																	<td class="text_f1"><b>MALE</b></td>
+																</tr>
+															
+															<tr>
+																<td class="text_f">Date of Birth/Incorporation</td>
+																<td class="text_f1"><b>01/01/1989</b></td>
+															</tr>
+															
+																
+																	<tr style="background-color: rgb(229, 229, 229);">
+																		<td class="text_f">Father's Name</td>
+																		<td colspan="2" class="text_f1"><b>BHAMTYA JOMSYA
+																			PADVI</b></td>
+																	</tr>
+																
+																
+															
+																<tr>
+																	<td class="text_f">Aadhaar Number/EID Number</td>
+																	<td colspan="2" class="text_f1"><b>xxxx-xxxx-0935 <font face="arial" size="1px">(MENTIONED, MATCHED)*</font></b></td>
+																</tr>
+															
+															
+																<tr style="background-color: rgb(229, 229, 229);">
+																	<td class="text_f">Name as per Aadhaar</td>
+																	<td colspan="2" class="text_f1"><b>ASHOK BHAMTYA PADVI</b></td>
+																</tr>
+															
+															<tr>
+																<td class="text_f">Applicant's Contact details</td>
+																<td colspan="2" class="text_f1"><b>9370635169 / padvisatilal@gmail.com</b></td>
+															</tr>
+															<tr style="background-color: rgb(229, 229, 229);">
+																<td class="text_f">Communication Address</td>
+																<td colspan="2" class="text_f1"><b>RESIDENCE</b></td>
+															</tr>
+															
+																<tr>
+																	<td class="text_f">Residence State</td>
+																	<td colspan="2" class="text_f1"><b>MAHARASHTRA</b></td>
+																</tr>
+															
+															
+															<tr style="background-color: rgb(229, 229, 229);">
+																<td class="text_f">Proof of Identity</td>
+																<td colspan="2" class="text_f1"><b>AADHAAR Card issued by UIDAI (In Copy)</b></td>
+															</tr>
+															<tr>
+																<td class="text_f">Proof of Address</td>
+																<td colspan="2" class="text_f1"><b>AADHAAR Card issued by UIDAI (In Copy)</b></td>
+															</tr>
+															<tr style="background-color: rgb(229, 229, 229);">
+																<td class="text_f">Proof of DOB</td>
+																<td colspan="2" class="text_f1"><b>AADHAAR Card issued by UIDAI (In Copy)</b></td>
+															</tr>
+															<tr>
+																<td class="text_f">Date of Receipt</td>
+																<td colspan="2" class="text_f1"><b>07/10/2024 09:02:21</b></td>
+															</tr>
+															<tr style="background-color: rgb(229, 229, 229);">
+																<td class="text_f">Mode of Pancard</td>
+																<td colspan="2" class="text_f1"><b>Both physical PAN and e-PAN Card</b></td>
+															</tr>
+															
+																<tr>
+																	<td class="text_f">Payment Ref No</td>
+																	<td colspan="2" class="text_f1"><b>4281083422190131 / PY0141474769</b></td>
+																</tr>
+																<tr style="background-color: rgb(229, 229, 229);">
+																	<td class="text_f">Payment Date</td>
+																	<td colspan="2" class="text_f1"><b>07/10/2024 08:34:32</b></td>
+																</tr>
+															
+
+															<tr>
+
+																<td colspan="3" class="text_f1" style="font-family:arial;font-size:10px;"><b>*AADHAAR MATCHED USING DEMOGRAPHIC DETAILS - WILL BE LINKED WITH PAN.<br><br>
+																
+																 <!-- To know your PAN
+                                                                    Application status, you may visit our website: <a
+                                                                            href="http://www.utiitsl.com" rel="noopener noreferrer" target="_blank">http://www.utiitsl.com</a>.</br>
+                                                                    As per instruction from Income Tax Department, an authorized agency's agent may visit you for your identity and address verification as per the documents submitted by you with the PAN application form. 
+                                                                    You are requested to ask authorization letter/ID card from the agent before verification.Your cooperation is solicited in this regard. --> 
+																</b></td>
+															</tr>
+															
+															<!-- <tr>
+															<td colspan="3">
+															<table width="100%"> -->
+															  
+															<tr style="background-color: rgb(229, 229, 229);">
+															<td class="text_f">PAN Service Center Code  <b>&nbsp;215217230011</b></td>
+															 
+															<td class="text_f1" colspan="2" align="right"><b>215217230011</b></td>
+															</tr>
+															<tr>
+															<td class="text_f">PAN Service Center Name <b>215217230011</b></td>
+															 
+															<td class="text_f1" colspan="2" align="right"><b>(Sign/Stamp)</b><br> Received for submission to UTIITSL</td>
+															</tr>
+															<!-- </table>															
+															</td>
+															</tr>	 -->														
+															<tr style="background-color: rgb(229, 229, 229);"><td class="text_f">Centre Contact Details: <b>PADVISATILAL@GMAIL.COM /7588889490</b></td>
+															
+															</tr><tr style="border: 1px solid #0083c7;">
+															<td colspan="3" class="text_f1" style="font-family:arial;font-size:10px; border: 1px solid #0083c7;"><b>
+															
+
+<!-- 																<td  colspan="3" class="text_f1" style="border: thin solid; font-family:arial;font-size:10px;" ><b>
+ -->																
+																 To know your PAN
+                                                                    Application status, you may visit our website: <a href="https://www.utiitsl.com/" rel="noopener noreferrer" target="_blank">https://www.utiitsl.com</a>.<br>
+                                                                    As per instruction from Income Tax Department, an authorized agency's agent may visit you for your identity and address verification as per the documents submitted by you with the PAN application form. 
+                                                                    You are requested to ask authorization letter/ID card from the agent before verification.Your cooperation is solicited in this regard. 
+																</b></td>
+															</tr>
+
+														</tbody></table>
+													</td>
+													
+												</tr>
+											</tbody></table>
+											</div>
+											
+											
+					<!-- Harish	 -->					
+											
+										
+											
+					<!-- Harish	 -->										
+											
+											
+											
+											<br>
+											<div align="center">
+												<input id="applNo" name="applNo" type="hidden" value="A100626921">
+												
+												
+												
+												<span><input type="button" class="button4" value="Close" onclick="closeButton();"></span>
+
+											
+
+									
+
+												
+													
+
+														
+															
+
+															
+																<span> <input type="submit" class="button3" value="Download Signed PAN Form" alt="Click to Download the Signed PAN Form" title="Click to Download the Signed PAN Form" onclick="downloadSignedForm()">
+																</span>
+																<span> <input type="button" class="button5" id="pButtonLink" value="Print" onclick="printMinInRec(this)">
+																</span>
+																
+															 <!-- 
+																<table width="80%" align="center" cellpadding="0" cellspacing="0">
+                        <tr class="textheading">
+                            <td width="70%">&nbsp;</td>
+                            <td align="right">&nbsp;
+                            <span><input type="button" class="button3" id="pButtonLink" value="Print" onclick="printMinInRec(this)"></span>
+                            
+                            <a href="#" id="pButtonLink" onclick="javascript:printMinInRec(this)">Print</a>&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                    </table>   -->
+																
+															
+														
+													
+												
+
+												<!-- Code for Digital PAN End -->
+
+
+											</div> <br>
+											
+											
+											
+
+</td>
+</tr>
+
+								
+								</tbody></table>
+							</div>
+							</section>
+							<br>
+
+						</div>
+
+					<div>
+</div></form>
+				
+			</div>
+
+		</div>
+
+		
+		<input type="hidden" name="feeedFlg" id="feeedFlg" value="N">		
+		<div id="ratingDialog">
+		</div>
+
+
+<script type="text/javascript">
+	$("#tbl tr:odd").css("background-color", "#e5e5e5");
+	$(".div.actions.clearfix").hide();
+</script>
+ 
+  
+  </div><div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons" aria-describedby="errorDiv" aria-labelledby="ui-id-1" style="display: none; position: fixed;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">Alert</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div id="errorDiv" class="ui-dialog-content ui-widget-content">
+			<p id="dialogText1"></p>
+		</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">OK</button></div></div></div></body></html>
